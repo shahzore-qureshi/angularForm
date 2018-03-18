@@ -1,0 +1,23 @@
+.screens {
+  max-width: 600px;
+  margin: 40vh auto 0;
+  padding: 20px;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-item:after {
+  content: '  →';
+  margin-left: 20px;
+}
+
+.nav-item:last-child {
+  margin: 0;
+}
+
+.nav-item:last-child:after {
+  content: '';
+  margin: 0;
+}
