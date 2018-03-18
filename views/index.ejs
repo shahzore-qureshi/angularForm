@@ -10,17 +10,37 @@
   </head>
   <body>
     <screens>
-      <screen title="Screen 1">
-        <span>Date: {{ '2012-04-01' | date:'fullDate' }}</span><br>
-        <span>Currency: {{ 123456 | currency }}</span><br>
-        <span>Number: {{ 98765.4321 | number }}</span><br>
+      <screen title="Basic Info">
+        <form name="basicInfoForm">
+          <div class="control-group"
+               ng-class="{error: basicInfoForm.name.$invalid && !basicInfoForm.name.$pristine}">
+            <label>Name</label>
+            <input type="text" name="name" ng-model="dataModel.basicInfo.name" required>
+            <span ng-show="basicInfoForm.name.$error.required && !basicInfoForm.name.$pristine"
+                  class="help-inline">
+                Required</span>
+          </div>
+         
+          <label>Description</label>
+          <textarea name="description" ng-model="dataModel.basicInfo.description"></textarea>
+         
+          <br>
+          <button ng-click="select(screen)" ng-disabled="basicInfoForm.$invalid"
+                  class="btn btn-primary">Next</button>
+        </form>
       </screen>
       <screen title="Screen 2">
 
       </screen>
     </screens>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
   </body>
 </html>

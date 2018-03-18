@@ -8,7 +8,8 @@ angular
     controller: function($scope, $element) {
       var screens = $scope.screens = [];
 
-      $scope.select = function(screen) {
+      this.selectScreen = $scope.select = function(screen) {
+        console.log(screen)
         angular.forEach(screens, function(screen) {
           screen.selected = false;
         });
@@ -18,6 +19,13 @@ angular
       this.addScreen = function(screen) {
         if (screens.length == 0) $scope.select(screen);
         screens.push(screen);
+      }
+
+      $scope.dataModel = {
+        basicInfo: {
+          name: '',
+          description: ''
+        }
       }
     },
     template:

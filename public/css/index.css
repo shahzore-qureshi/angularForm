@@ -4,6 +4,10 @@
   padding: 20px;
 }
 
+.nav {
+  margin-bottom: 20px;
+}
+
 .nav-item {
   margin-right: 20px;
 }
@@ -20,4 +24,9 @@
 .nav-item:last-child:after {
   content: '';
   margin: 0;
+}
+
+.nav-item a.active {
+  color: black;
+  text-decoration: none;
 }
